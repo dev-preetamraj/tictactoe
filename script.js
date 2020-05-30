@@ -9,6 +9,8 @@ $(document).ready(function(){
 	var liSelector = $("li");
 	var music = new Audio();
 	music.src = 'media/chalu.mp3';
+	var winMusic = new Audio();
+	winMusic.src = 'media/win.mp3';
 	
 
 	var player1=0;player2=0;tie=0; // variables for counting no. of wins of X and O
@@ -64,10 +66,10 @@ $(document).ready(function(){
 				
 				// (I think that a proper way to ask if a new match should be started or not should be asked!)
 				result.innerHTML=liSelector[array[i][0]].textContent+" WON The Last Match!";
+				winMusic.play();
 				setTimeout(clearBord,2000); // delay in between
 			} else if(window.totalChancesPlayed == 9){
 				tie+=1
-				console.log(tie)
 				ti.innerHTML = tie;
 				result.innerHTML="NO One WON The Last Match!";
 				setTimeout(clearBord,2000);
