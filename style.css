@@ -28,6 +28,29 @@ li:hover{
 	margin:0px;
 
 }
+@media only screen and (max-width: 600px) {
+	li{
+	height: 110px;
+	width: 110px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 95px;
+	cursor: pointer;
+	background-color:white;
+	border-radius:5px;
+	transition: all 0.3s ;
+	margin:4px;
+	display:inline-block;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	padding-bottom:24px;
+}
+li:hover{
+	height:120px;
+	width:120px;
+	margin:0px;
+
+}	
+}
 
 /*----Header style----*/
 table {
