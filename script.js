@@ -14,7 +14,7 @@ $(document).ready(function(){
 	
 
 	var player1=0;player2=0;tie=0; // variables for counting no. of wins of X and O
-	var altcnt=0;
+	var altcnt=0;// for alternate move of X and O
 	var p1 = document.getElementById("p1won");
 	var ti = document.getElementById("tie") 
 	var p2 = document.getElementById("p2won")
