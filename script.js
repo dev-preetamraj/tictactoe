@@ -14,6 +14,7 @@ $(document).ready(function(){
 	
 
 	var player1=0;player2=0;tie=0; // variables for counting no. of wins of X and O
+	var altcnt=0;
 	var p1 = document.getElementById("p1won");
 	var ti = document.getElementById("tie") 
 	var p2 = document.getElementById("p2won")
@@ -36,10 +37,11 @@ $(document).ready(function(){
 		}
 		window.chance = 1;
 		window.totalChancesPlayed = 0;
-		player1=0;player2=0;tie=0;
+		player1=0;player2=0;tie=0;altcnt=0;
 		p1.innerHTML = player1;
 		p2.innerHTML = player2;
 		ti.innerHTML = tie;
+
 	};
 
 	start.on("click",restart)
@@ -57,10 +59,12 @@ $(document).ready(function(){
 				)
 			{	if (liSelector[array[i][0]].textContent == "X"){
 					player1+=1
+					altcnt+=1
 					p1.innerHTML = player1;
 				}
 				else if(liSelector[array[i][0]].textContent == "O"){
 					player2+=1
+					altcnt+=1
 					p2.innerHTML = player2;
 				}
 				
@@ -70,6 +74,7 @@ $(document).ready(function(){
 				setTimeout(clearBord,2000); // delay in between
 			} else if(window.totalChancesPlayed == 9){
 				tie+=1
+				altcnt+=1
 				ti.innerHTML = tie;
 				result.innerHTML="NO One WON The Last Match!";
 				setTimeout(clearBord,2000);
@@ -81,22 +86,42 @@ $(document).ready(function(){
 
 	function addText(){
 		if(this.textContent===''){
-			if(window.chance == 1){
-				this.textContent="X"
-				
-				this.style.color = 'black';
-				window.chance = 0;
-				window.totalChancesPlayed +=1;
-				music.play();
-			} else{
-				this.textContent = 'O';
-				
-				this.style.color = 'red';
-				window.chance = 1;
-				window.totalChancesPlayed +=1;
-				music.play();
+			if(altcnt%2===0){
+				if(window.chance == 1){
+					this.textContent="X"
+					
+					this.style.color = 'black';
+					window.chance = 0;
+					window.totalChancesPlayed +=1;
+					music.play();
+				} else{
+					this.textContent = 'O';
+					
+					this.style.color = 'red';
+					window.chance = 1;
+					window.totalChancesPlayed +=1;
+					music.play();
+				}
+				checker();
 			}
-			checker();
+			else{
+				if(window.chance == 0){
+					this.textContent="X"
+					
+					this.style.color = 'black';
+					window.chance = 1;
+					window.totalChancesPlayed +=1;
+					music.play();
+				} else{
+					this.textContent = 'O';
+					
+					this.style.color = 'red';
+					window.chance = 0;
+					window.totalChancesPlayed +=1;
+					music.play();
+				}
+				checker();
+			}
 		}
 		
 	}
