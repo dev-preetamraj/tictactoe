@@ -17,13 +17,65 @@
       <div class="jumbotron">
         <h1>Tic Tac Toe</h1>
         <p>Welcome to Tic Tac Toe game, created by Preetam Raj</p>
-        <button class="btn btn-primary m-3" id="btnstart">Re-Start</button>
-        <button class="btn btn-primary" id="btnset">ClearBoard</button>
+        
+        <div >
+          <button id="newg" class = "btn btn-primary m-3">New Game</button>
+          <button class="btn btn-primary m-3" id="btnstart">Re-Start</button>
+          <button class="btn btn-primary m-3" id="btnset">ClearBoard</button>
+        </div>
       </div>
       <div></div>
       <h2 id="result"></h2>
-      <!---GameHeader--->
+     
+     
+    </div>
+   
+    <div class="text-center">
+      <div id="level" class="container text-center move-up">
       <div class="row justify-content-md-center">
+          <table>
+            <tr>
+              <td style="padding: 20px">Level</td>
+              
+            </tr>
+            
+          </table>
+        </div>
+        <div id="choiceBtn" class=" justify-content-md-center">
+          <div>
+            <button id="vs1" class = "">Vs Computer</button>
+          </div>
+          <div>
+            <button id="vs2" class = "">Two Player</button>
+          </div>
+      </div>
+    </div>
+    <div id="choice" class ="hide">
+       <div class="row justify-content-md-center">
+          <table>
+            <tr>
+              <td>Choose your character</td>
+              
+            </tr>
+            <tr>
+              <td>X start first </td>
+            </tr>
+          </table>
+        </div>
+        <div class="container">
+        <!----Tic Tac toe Board----->
+        <div class="row  justify-content-md-center">
+          <div class="col-md-auto " >  
+              <p id="X" class="box">X</p>
+              <p id="O" class="box">O</p>         
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="twoPlayerBoard" class="hide">
+      <!---GameHeader--->
+     <div class="row justify-content-md-center">
         <table>
           <tr>
             <td>Player1 : X</td>
@@ -37,7 +89,6 @@
           </tr>
         </table>
       </div>
-    </div>
     <div class="container">
       <!----Tic Tac toe Board----->
       <div class="row  justify-content-md-center">
@@ -61,6 +112,8 @@
         </div>
       </div>
     </div>
+  </div>
+  </div>
       <!----Creater and Contributors Discription---->
       <div class="container">
         <div class=" foot row">
