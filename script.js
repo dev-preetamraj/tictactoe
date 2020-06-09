@@ -128,4 +128,77 @@ $(document).ready(function(){
 	for (var i = 0; i < liSelector.length; i++) {
 		liSelector[i].addEventListener('click', addText)
 	}
+
+	const level = document.getElementById("level");
+	const choice = document.getElementById("choice");
+	const twoPlayerBoard = document.getElementById("twoPlayerBoard");
+	const onevs = document.getElementById("vs1");
+	const twovs = document.getElementById("vs2");
+	const newg = document.getElementById("newg");
+	const x = document.getElementById("X");
+	const o = document.getElementById("O")
+	onevs.addEventListener('click',() => {
+		
+		level.classList.remove("move-up")
+		level.classList.add("move-down")
+		setTimeout(() =>{
+			choice.classList.remove("hide")
+			choice.classList.remove("move-down")
+			choice.classList.add("move-up")
+			twoPlayerBoard.classList.add("hide")
+			level.classList.add("hide")
+		},1000)	
+		
+	})
+	twovs.addEventListener('click',() => {
+		level.classList.remove("move-up")
+		level.classList.add("move-down")
+		setTimeout(() =>{
+			choice.classList.remove("hide")
+			choice.classList.remove("move-down")
+			choice.classList.add("move-up")
+			twoPlayerBoard.classList.add("hide")
+			level.classList.add("hide")
+		},1000)	
+	})
+	newg.addEventListener('click',() => {
+		restart();
+		twoPlayerBoard.classList.remove("grow")
+		twoPlayerBoard.classList.add("grow-out")
+		choice.classList.remove("move-up")
+		choice.classList.add("move-down")
+		setTimeout(() => {
+			level.classList.remove("hide")
+			level.classList.remove("move-down")
+			level.classList.add("move-up")
+			choice.classList.add("hide")
+			twoPlayerBoard.classList.add("hide")
+			
+		},800)
+			})
+	x.addEventListener('click',() => {
+		choice.classList.remove("move-up")
+		choice.classList.add("move-down")
+		setTimeout(() =>{
+		level.classList.add("hide")
+		choice.classList.add("hide")
+		twoPlayerBoard.classList.remove("hide")
+		twoPlayerBoard.classList.remove("grow-out")
+		twoPlayerBoard.classList.add("grow")
+		
+		},1000)
+		
+	})
+	o.addEventListener('click',() => {
+	choice.classList.remove("move-up")
+		choice.classList.add("move-down")
+		setTimeout(() =>{
+		level.classList.add("hide")
+		choice.classList.add("hide")
+		twoPlayerBoard.classList.remove("hide")
+		twoPlayerBoard.classList.remove("grow-out")
+		twoPlayerBoard.classList.add("grow")
+		
+		},1000)
+	})
 });
